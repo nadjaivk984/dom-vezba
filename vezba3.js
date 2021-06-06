@@ -10,7 +10,8 @@ var lastDiv=document.getElementsByTagName("div")[1];
 //console.log(lastDiv);
 buildingDrop1(["Jan","Feb","March","April","May","Jun","July","Avgust"],lastDiv);
 validaion();
-
+var el=document.querySelectorAll("input");
+console.log(el);
 
 });
 
@@ -66,9 +67,12 @@ function buildingDrop1(a,b){
    
   }  
   function validaion(){
-      var el=document.querySelector("input");
-      if(el.hasAttribute("required")){
-          el.style.border="red 1px solid";
+      var el=document.querySelectorAll("input");
+     for(var i=0;i<el.length;i++){
+       var el2=el[i];
+      if(el2.hasAttribute("required"))  {
+       el2.style.border="red 1px solid";
 
+      }
       }
   }
